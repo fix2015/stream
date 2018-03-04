@@ -102,7 +102,7 @@ gulp.task('server', () => {
     server: DIRS.dest,
     tunnel: 'angularseedes6',
     browser: 'google chrome',
-    port: 8000
+    port: process.env.PORT || 8000
   });
 });
 
