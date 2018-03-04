@@ -40,7 +40,7 @@ const CSS_DEPENDENCIES = [
 const PATHS = {
   sass: [`${DIRS.src}/scss/*.scss`, `${DIRS.src}/scss/**/*.scss`],
   js: [`${DIRS.src}/js/*.js`, `${DIRS.src}/js/**/*.js`],
-  html: [`${DIRS.src}/templates/*.html`, `${DIRS.src}/templates/**/*.html`]
+  html: [`${DIRS.src}/js/components/**/**/*.html`]
 };
 
 // Handle sass changes.
@@ -68,7 +68,7 @@ gulp.task('sass', () => {
 // Handle html changes.
 gulp.task('html', () => {
   return gulp.src(PATHS.html)
-    .pipe(gulp.dest(`${DIRS.dest}/templates`))
+    .pipe(gulp.dest(`${DIRS.dest}/js/components/**`))
     .pipe(browserSync.stream({match: '**/*.html'}));
 });
 

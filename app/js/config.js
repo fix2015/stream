@@ -1,5 +1,5 @@
-import recorder from './components/recorder/index.js'
-import admin from './components/admin/index.js'
+import recorder from './module/recorder/index.js'
+import admin from './module/admin/index.js'
 
 let configRouter = function ($stateProvider, $urlRouterProvider) {
     $stateProvider

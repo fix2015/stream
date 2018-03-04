@@ -4,8 +4,43 @@
 
 // Layout
 // -----------------------------------------------------------------------------
-.view-two {
+recorder {
   background-color: $secondary;
-}
+  video-container{
+    padding: 0 0 0 10px;
+    .block{
+      position: relative;
+      padding-bottom: 56.25%; /*16:9*/
+      //padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+      min-height: 50%;
+      video{
+        width: 100%;
+      }
+    }
+  }
+  controller-container{
+    padding: 0 0 0 10px;
+    .recording svg{
+      animation:record 1s;
+      -moz-animation:recording 1s infinite;
+      -webkit-animation:recording 1s infinite;
+    }
 
+    @-moz-keyframes recording
+    {
+      0%   {color:black;}
+      50%  {color:white;}
+      100%   {color:black;}
+    }
+
+    @-webkit-keyframes recording
+    {
+      0%   {color:black;}
+      50%  {color:white;}
+      100%   {color:black;}
+    }
+  }
+}
 // -----------------------------------------------------------------------------
