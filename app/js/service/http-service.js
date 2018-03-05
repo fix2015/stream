@@ -1,8 +1,8 @@
 class HttpService {
-    constructor ($http, $q) {
+    constructor ($http, $q, BE_DOMAIN) {
         this._http = $http;
         this._q = $q;
-        this._domain = 'http://localhost:1337';
+        this._domain = BE_DOMAIN;
     }
 
     post (obj) {
@@ -64,6 +64,6 @@ class HttpService {
     }
 
 }
-HttpService.$inject = ['$http', '$q'];
+HttpService.$inject = ['$http', '$q', 'BE_DOMAIN'];
 
-export default HttpService;
+exports.modules = HttpService;

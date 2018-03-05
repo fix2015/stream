@@ -41,4 +41,4 @@ class HelperService {
 }
 HelperService.$inject = [];
 
-export default HelperService;
+exports.modules = HelperService;

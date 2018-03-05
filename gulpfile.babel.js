@@ -1,19 +1,19 @@
 'use strict';
 
-import gulp from 'gulp';
-import sequence from 'run-sequence';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
-import gulpif       from 'gulp-if';
-import source       from 'vinyl-source-stream';
-import sourcemaps   from 'gulp-sourcemaps';
-import buffer       from 'vinyl-buffer';
-import streamify    from 'gulp-streamify';
-import watchify     from 'watchify';
-import browserify   from 'browserify';
-import babelify     from 'babelify';
-import debowerify   from 'debowerify';
-// import ngAnnotate   from 'browserify-ngannotate';
+var gulp = require("gulp");
+var babel = require("gulp-babel");
+var sequence = require('run-sequence');
+var gulpLoadPlugins = require('gulp-load-plugins');
+var browserSync =require('browser-sync');
+var gulpif =require('gulp-if');
+var source = require('vinyl-source-stream');
+var sourcemaps = require('gulp-sourcemaps');
+var buffer = require('vinyl-buffer');
+var streamify = require('gulp-streamify');
+var watchify = require('watchify');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var debowerify = require('debowerify');
 
 let isProd = false;
 

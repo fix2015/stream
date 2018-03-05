@@ -44,4 +44,4 @@ class RecorderService {
 }
 RecorderService.$inject = [];
 
-export default RecorderService;
+exports.modules = RecorderService;

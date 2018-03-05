@@ -1,5 +1,5 @@
-import recorder from './module/recorder/index.js'
-import admin from './module/admin/index.js'
+let recorder = require('./module/recorder/index.js').modules;
+let admin = require('./module/admin/index.js').modules;
 
 let configRouter = function ($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -11,4 +11,4 @@ let configRouter = function ($stateProvider, $urlRouterProvider) {
 
 configRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-export default configRouter;
+exports.modules = configRouter;

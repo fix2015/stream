@@ -1,8 +1,8 @@
-import angular from 'angular';
-import recorderComponent from './main.js';
-import videoComponent from './components/video-containter/component';
-import controllerContainer from './components/controller-containter/component';
-import RecorderService from './service/recorder-service';
+let angular = require('angular');
+let recorderComponent = require('./main.js').modules;
+let videoComponent = require('./components/video-containter/component').modules;
+let controllerContainer = require('./components/controller-containter/component').modules;
+let RecorderService = require('./service/recorder-service').modules;
 
 angular
     .module('stream.recorder', [])

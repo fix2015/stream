@@ -1,13 +1,11 @@
-import angular from 'angular';
-import 'angular-ui-router';
-import 'angular-material';
-import configRouter from './config.js';
-import './module/recorder/module.js';
-import './module/admin/module.js';
-import HttpService from './service/http-service';
-import HelperService from './service/helper-service';
-// import './old/recorder/module.js';
-
+let angular = require('angular');
+require('angular-ui-router');
+require('angular-material');
+let configRouter = require('./config.js').modules;
+require('./module/recorder/module.js');
+require('./module/admin/module.js');
+let HttpService = require('./service/http-service').modules;
+let HelperService = require('./service/helper-service').modules;
 
 let dependencies = [
   'ui.router',
@@ -18,6 +16,7 @@ let dependencies = [
 
 angular
   .module('streamApp', dependencies)
+  .constant('BE_DOMAIN', 'http://localhost:1337')
   .service('HttpService', HttpService)
   .service('HelperService', HelperService)
   .config(configRouter);

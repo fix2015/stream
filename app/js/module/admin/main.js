@@ -76,4 +76,4 @@ const AdminComponent = {
     controller: AdminController
 }
 
-export default AdminComponent;
+exports.modules = AdminComponent;

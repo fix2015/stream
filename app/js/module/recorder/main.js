@@ -41,4 +41,4 @@ const RecorderComponent = {
     controller: RecorderController
 }
 
-export default RecorderComponent;
+exports.modules = RecorderComponent;

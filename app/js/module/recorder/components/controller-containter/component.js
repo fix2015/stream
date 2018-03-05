@@ -54,5 +54,5 @@ const VideoComponent = {
     controller: VideoController
 }
 
-export default VideoComponent;
+exports.modules = VideoComponent;
 

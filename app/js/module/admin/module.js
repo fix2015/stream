@@ -1,5 +1,5 @@
-import angular from 'angular';
-import adminComponent from './main.js';
+let angular = require('angular');
+let adminComponent = require('./main.js').modules;
 
 angular
     .module('stream.admin', [])
