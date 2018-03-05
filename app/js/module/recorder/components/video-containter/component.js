@@ -36,8 +36,8 @@ class VideoController {
 
     $onInit(){
         this.videoElement.src = this.urls[0];
-        this.addListener();
         this._recorderService.on('start', () => {
+            this.addListener();
             this._recorderService.add(this.videoElement);
             this.videoElement.play()
         });
