@@ -37,6 +37,10 @@ class RecorderService {
         this._events[status].push(callback);
     }
 
+    destroy () {
+        this._events = {};
+    }
+
     generate (){
         return '_' + Math.random().toString(36).substr(2, 9);
     }
