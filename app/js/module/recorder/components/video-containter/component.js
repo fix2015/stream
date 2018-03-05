@@ -101,7 +101,7 @@ const VideoComponent = {
           <md-card-title-media>
              <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
                 <div class="block">
-                    <video controls>
+                    <video controls muted>
                         <source ng-src='{{$ctrl.src}}' type="video/mp4"></source>
                     </video>
                 </div>
