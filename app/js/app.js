@@ -16,7 +16,7 @@ let dependencies = [
 
 angular
   .module('streamApp', dependencies)
-  .constant('BE_DOMAIN', 'http://104.46.52.168:1337')
+  .constant('BE_DOMAIN', 'http://52.174.54.39:1337')
   .service('HttpService', HttpService)
   .service('HelperService', HelperService)
   .config(configRouter);
