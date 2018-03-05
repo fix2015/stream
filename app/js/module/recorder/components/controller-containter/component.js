@@ -1,9 +1,18 @@
 class VideoController {
-    constructor(RecorderService, HelperService){
+    constructor(RecorderService, HelperService, $scope){
         this._recorderService = RecorderService;
         this._helperService = HelperService;
-        this.recordArr = []
-        this._recorderService.on('update', this.updateVideoJSON.bind(this))
+        this._scope = $scope;
+        this.recordArr = [];
+        this.playing=false;
+        this._recorderService.on('update', this.updateVideoJSON.bind(this));
+        this._recorderService.on('load', this.playingVideo.bind(this, true));
+        this._recorderService.on('playFinished', this.playingVideo.bind(this, false));
+    }
+
+    playingVideo(status){
+        this.playing = status;
+        this._scope.$applyAsync();
     }
 
     loadVideo(arr){
@@ -19,7 +28,6 @@ class VideoController {
     }
 
     $onInit(){
-        console.log(this)
         this.updateVideos();
     }
 }
@@ -33,7 +41,7 @@ const VideoComponent = {
     template: `
         <section>
            <md-card-title-text layout="row" layout-align="center" ng-class="$ctrl.recording ? 'recording' : ''">
-            <md-button aria-label="ariallabel" ng-click='$ctrl.record()'  class="md-raised" md-colors="{'background-color': 'red'}">
+            <md-button ng-disabled="$ctrl.playing" aria-label="ariallabel" ng-click='$ctrl.record()'  class="md-raised" md-colors="{'background-color': $ctrl.playing ? 'grey-500' : 'red' }">
                 <i class="fas fa-video"></i> <span ng-bind="$ctrl.recording ? 'Stop' : 'Rec'"></span>
             </md-button>
         </md-card-title-text>
@@ -45,7 +53,7 @@ const VideoComponent = {
                       <md-list-item ng-repeat="(ind, arr) in $ctrl.recordArr">
                         <p>Recorder № {{$index+1}} </p>
                         <div class="md-list-item-text" layout="column">
-                            <md-button aria-label="{{arr}}" ng-click='$ctrl.loadVideo(arr)'  class="md-raised"  md-colors="{'background-color': 'red'}"><i class="fas fa-play"></i></md-button>
+                            <md-button ng-disabled="$ctrl.recording" aria-label="{{arr}}" ng-click='$ctrl.loadVideo(arr)'  class="md-raised"  md-colors="{'background-color': $ctrl.recording ? 'grey-500' : 'red' }"><i class="fas fa-play"></i></md-button>
                        </md-list-item>
                  </md-list>
             </div>

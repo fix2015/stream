@@ -80,6 +80,7 @@ class VideoController {
                         }else{
                             flag = true;
                             this.videoElement.pause();
+                            this._recorderService.emit('playFinished');
                             return ;
                         }
                     }
@@ -87,6 +88,7 @@ class VideoController {
             }else{
                 flag = true;
                 this.videoElement.pause();
+                this._recorderService.emit('playFinished');
                 return ;
             }
         }
