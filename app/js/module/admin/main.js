@@ -66,7 +66,7 @@ const AdminComponent = {
                        <md-list>
                         <md-subheader class="md-no-sticky">List of videos:</md-subheader>
                           <md-list-item ng-repeat="(ind, video) in $ctrl.videoArr">
-                            <p>Record №{{ind+1}} - {{video.id}}</p>
+                            <p>Record №{{ind+1}} - </p>
                             <md-button class="md-raised" ng-click="$ctrl.remove(video.id, ind)" md-colors="{'background-color': 'red'}">Remove</md-button>
                       </md-list>
                   </section>
