@@ -33,7 +33,7 @@ const VideoComponent = {
     template: `
         <section>
            <md-card-title-text layout="row" layout-align="center" ng-class="$ctrl.recording ? 'recording' : ''">
-            <md-button ng-click='$ctrl.record()'  class="md-raised" md-colors="{'background-color': 'red'}">
+            <md-button aria-label="ariallabel" ng-click='$ctrl.record()'  class="md-raised" md-colors="{'background-color': 'red'}">
                 <i class="fas fa-video"></i> <span ng-bind="$ctrl.recording ? 'Stop' : 'Rec'"></span>
             </md-button>
         </md-card-title-text>
@@ -45,7 +45,7 @@ const VideoComponent = {
                       <md-list-item ng-repeat="(ind, arr) in $ctrl.recordArr">
                         <p>Recorder № {{$index+1}} </p>
                         <div class="md-list-item-text" layout="column">
-                            <md-button ng-click='$ctrl.loadVideo(arr)'  class="md-raised"  md-colors="{'background-color': 'red'}"><i class="fas fa-play"></i></md-button>
+                            <md-button aria-label="{{arr}}" ng-click='$ctrl.loadVideo(arr)'  class="md-raised"  md-colors="{'background-color': 'red'}"><i class="fas fa-play"></i></md-button>
                        </md-list-item>
                  </md-list>
             </div>
