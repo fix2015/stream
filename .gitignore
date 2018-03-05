@@ -6,3 +6,9 @@ tmp
 .DS_Store
 .idea
 npm-debug.log
+.babelrc
+.eslintrc
+.jscsrc
+.jshintrc
+.travis.yml
+

@@ -36,8 +36,8 @@ class VideoController {
 
     $onInit(){
         this.videoElement.src = this.urls[0];
-        this.addListener();
         this._recorderService.on('start', () => {
+            this.addListener();
             this._recorderService.add(this.videoElement);
             this.videoElement.play()
         });
@@ -101,7 +101,7 @@ const VideoComponent = {
           <md-card-title-media>
              <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
                 <div class="block">
-                    <video controls>
+                    <video controls muted>
                         <source ng-src='{{$ctrl.src}}' type="video/mp4"></source>
                     </video>
                 </div>
