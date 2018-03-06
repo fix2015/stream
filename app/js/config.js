@@ -6,7 +6,7 @@ let configRouter = function ($stateProvider, $urlRouterProvider) {
         .state(recorder)
         .state(admin);
 
-    $urlRouterProvider.otherwise('recorder');
+    $urlRouterProvider.otherwise('/');
 };
 
 configRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
